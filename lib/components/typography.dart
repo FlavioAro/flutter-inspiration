@@ -8,12 +8,16 @@ enum TypographySize {
 
 class InspirationTypography extends StatefulWidget {
   final String text;
+  final Color? color;
   final TypographySize? size;
+  final FontWeight? fontWeight;
 
   const InspirationTypography({
     Key? key,
     required this.text,
+    this.color = Colors.black,
     this.size = TypographySize.small,
+    this.fontWeight,
   }) : super(key: key);
 
   @override
@@ -23,43 +27,34 @@ class InspirationTypography extends StatefulWidget {
 class _InspirationTypographyState extends State<InspirationTypography> {
   @override
   Widget build(BuildContext context) {
-    _getProperties(String propertiesType) {
-      dynamic result = "";
-      Map<String, dynamic> properties = {};
-
+    _getFontSize() {
+      final double result;
       switch (widget.size) {
         case TypographySize.large:
           {
-            properties['fontSize'] = 40;
-            properties['fontWeight'] = FontWeight.normal;
-            properties['color'] = Colors.black;
+            result = 40;
           }
           break;
         case TypographySize.medium:
           {
-            properties['fontSize'] = 25;
-            properties['fontWeight'] = FontWeight.normal;
-            properties['color'] = Colors.black87;
+            result = 25;
           }
           break;
         default: // small
           {
-            properties['fontSize'] = 15;
-            properties['fontWeight'] = FontWeight.bold;
-            properties['color'] = Colors.black;
+            result = 15;
           }
       }
 
-      result = properties[propertiesType];
       return result;
     }
 
     return Text(
       widget.text,
       style: TextStyle(
-        fontSize: double.parse(_getProperties('fontSize').toString()),
-        fontWeight: _getProperties('fontWeight'),
-        color: _getProperties('color'),
+        fontSize: _getFontSize(),
+        fontWeight: widget.fontWeight,
+        color: widget.color,
       ),
     );
   }

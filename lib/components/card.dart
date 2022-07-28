@@ -34,7 +34,7 @@ class _InspirationCardState extends State<InspirationCard> {
             properties['margin'] = const EdgeInsets.only(right: 0.0);
           }
           break;
-        default:
+        default: // vertical
           {
             properties['height'] = 50;
             properties['width'] = 200;

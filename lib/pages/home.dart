@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {},
           icon: const Icon(
             Icons.menu,
-            color: Colors.black87,
+            color: Colors.black,
           ),
         ),
       ),
@@ -42,7 +42,8 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   InspirationTypography(
-                    text: 'Find Your',
+                    text: 'Nerd Autodidata',
+                    color: Colors.black87,
                     size: TypographySize.medium,
                   ),
                   SizedBox(
@@ -50,7 +51,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                   InspirationTypography(
                     text: 'Inspiration',
+                    color: Colors.amber,
                     size: TypographySize.large,
+                    fontWeight: FontWeight.bold,
                   ),
                   SizedBox(
                     height: 20,
@@ -72,7 +75,11 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const InspirationTypography(text: 'Promo Today'),
+                  const InspirationTypography(
+                    text: 'Today',
+                    color: Colors.black54,
+                    fontWeight: FontWeight.bold,
+                  ),
                   const SizedBox(
                     height: 15,
                   ),
