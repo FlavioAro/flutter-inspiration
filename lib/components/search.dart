@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class InspirationInputSearch extends StatefulWidget {
+  
+  final String placeholder;
+  
   const InspirationInputSearch({Key? key, required this.placeholder})
       : super(key: key);
-
-  final String placeholder;
 
   @override
   State<InspirationInputSearch> createState() => _InspirationInputSearchState();
